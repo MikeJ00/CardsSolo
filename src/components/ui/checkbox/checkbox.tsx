@@ -17,6 +17,7 @@ import s from '../checkbox/checkbox.module.scss'
 export const Checkbox = ({ checked, className, disabled, id, label }: CheckboxProps) => {
   const classNames = {
     checkboxRoot: clsx(s.checkboxRoot, disabled && s.disabled),
+    container: clsx(s.container, className),
     indicator: s.indicator,
     label: clsx(s.label, disabled && s.disabled, className),
     root: clsx(s.root),
@@ -24,21 +25,23 @@ export const Checkbox = ({ checked, className, disabled, id, label }: CheckboxPr
 
   return (
     <form>
-      <div className={classNames.checkboxRoot}>
-        <CheckboxRadix.Root
-          checked={checked}
-          className={classNames.root}
-          disabled={disabled}
-          id={id}
-        >
-          {checked && (
-            <CheckboxRadix.Indicator className={classNames.indicator}>
-              <CheckIcon />
-            </CheckboxRadix.Indicator>
-          )}
-        </CheckboxRadix.Root>
+      <div className={s.container}>
+        <div className={classNames.checkboxRoot}>
+          <CheckboxRadix.Root
+            checked={checked}
+            className={classNames.root}
+            disabled={disabled}
+            id={id}
+          >
+            {checked && (
+              <CheckboxRadix.Indicator className={classNames.indicator}>
+                <CheckIcon />
+              </CheckboxRadix.Indicator>
+            )}
+          </CheckboxRadix.Root>
+        </div>
+        {label}
       </div>
-      {label}
     </form>
   )
 }

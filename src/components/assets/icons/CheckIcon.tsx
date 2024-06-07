@@ -30,7 +30,7 @@ export const CheckIcon = ({ disabled, svgProps, ...restProps }: IconProps) => {
           d={
             'M16 0L2 0C0.890015 0 0 0.899902 0 2L0 16C0 17.1001 0.890015 18 2 18L16 18C17.11 18 18 17.1001 18 16L18 2C18 0.899902 17.11 0 16 0ZM7 14L2 9L3.40997 7.59009L7 11.1699L14.59 3.58008L16 5L7 14Z'
           }
-          fill={disabled ? '#808080' : '#FFF'}
+          fill={'currentColor'}
           fillOpacity={'1.000000'}
           fillRule={'nonzero'}
           id={'checkbox'}
